@@ -1,0 +1,18 @@
+{
+    "name": "node-sendgrid"
+  , "version": "0.0.1"
+  , "description": "Wrapper for the Sendgrid API"
+  , "homepage": "http://github.com"
+  , "keywords": ["sendgrid", "smtp", "email"]
+  , "author": "Gabriel Teodoru <gabriel@scopely.com>"
+  , "contributors": [
+        { "name": "Gabriel Teodoru", "email": "teodoru.gabi@gmail.com" }
+      , { "name": "Ankur Bulsara", "email": "ankur@scopely.com" }
+    ]
+  , "repository":{
+        "type": "git"
+      , "url": "https://github.com/scopely/node-sendgrid.git"
+    }
+  , "main": "index"
+  , "engines": { "node": ">= 0.4.0" }
+}
