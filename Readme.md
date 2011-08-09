@@ -1,7 +1,8 @@
 # node-sendgrid
 
-node-sendgird is a Node.JS project that wraps the API calls for Sendgrid service.
-It is written using CoffeScript http://jashkenas.github.com/coffee-script/
+node-sendgird is a Node.JS project that wraps the API calls for Sendgrid service
+It is written using CoffeScript http://jashkenas.github.com/coffee-script,
+
 
 ## How to Install
 
@@ -24,9 +25,9 @@ var client = new sendgrid.SendGridClient('[SENDGRID ACCOUNT]','[SENDGRID PASSWOR
 Finally, start calling the api methods using the created object:
 
 ```js
-client.api.unsubscribe.get({}, (err, result) ->
-  console.log err, result
-)
+client.api.unsubscribe.get({}, function(err, result) {
+  console.log(err, result)
+})
 ```
 
 For more thorough examples, look at the `examples/` directory.

@@ -13,6 +13,9 @@
         "type": "git"
       , "url": "https://github.com/scopely/node-sendgrid.git"
     }
+  , "dependencies": {
+        "nodemailer": ">= 0.1.10"
+    }
   , "main": "index"
   , "engines": { "node": ">= 0.4.0" }
 }

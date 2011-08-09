@@ -1,6 +1,7 @@
-querystring = require('querystring')
-utils       = require('./utils')
-url         = require('url')
+querystring   = require('querystring')
+utils         = require('./utils')
+url           = require('url')
+SendGridSMTP = require('./smtp').SendGridSMTP
 
 class SendGridClient
 
@@ -9,6 +10,8 @@ class SendGridClient
   constructor : (@apiUser, @apiKey, @useWebApi = true) ->
     if !apiUser || !apiKey
       throw new Error('Credentials missing')
+
+    @smtp = new SendGridSMTP(@apiUser, @apiKey)
 
     @api =
       mail:
