@@ -6,7 +6,7 @@ class SendGridSMTP
   @SMTP_PORT  = 25
 
   constructor : (username, password) ->
-    nodemailer.SMTP = {
+    @server = {
       host                : SendGridSMTP.SMTP_HOST,
       port                : 25,
       ssl                 : false,
@@ -57,7 +57,8 @@ class SendGridSMTP
       bcc     : bcc,
       headers : {
         'X-SMTPAPI' : @as_string()
-      }
+      },
+      server : @server
     }, (error, success) ->
       console.log('Message ' + (success ? 'sent' : 'failed'))
     )

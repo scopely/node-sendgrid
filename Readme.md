@@ -1,4 +1,4 @@
-# node-sendgrid
+# sendgrid-api
 
 node-sendgird is a Node.JS project that wraps the API calls for Sendgrid service
 It is written using CoffeScript http://jashkenas.github.com/coffee-script,
@@ -6,14 +6,14 @@ It is written using CoffeScript http://jashkenas.github.com/coffee-script,
 
 ## How to Install
 
-    npm install node-sendgrid
+    npm install sendgrid-api
 
 ## How to use
 
-First, require `node-sendgrid`:
+First, require `sendgrid-api`:
 
 ```js
-var sendgrid = require('node-sendgrid');
+var sendgrid = require('sendgrid-api');
 ```
 
 Next, create a SendGrid client object using your SendGrid account credentials:
