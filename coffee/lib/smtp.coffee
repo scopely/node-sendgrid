@@ -32,7 +32,7 @@ class SendGridSMTP
   setUniqueArgs : (value) ->
     @headers['unique_args'] = value if typeof(value) == 'object'
 
-  setCategroy : (category) ->
+  setCategory : (category) ->
     @headers['category'] = category
 
   addFilterSeting : (filter, setting, value) ->
