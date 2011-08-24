@@ -47,7 +47,7 @@ class SendGridSMTP
   as_string : () ->
     return JSON.stringify(@headers)
 
-  send : (to, from, subject, text, html, toname, bcc, fromname) ->
+  send : (to, from, subject, text, html, toname, bcc, fromname, callback) ->
     nodemailer.send_mail({
       sender  : from,
       to      : to,
@@ -60,7 +60,7 @@ class SendGridSMTP
       },
       server : @server
     }, (error, success) ->
-      console.log('Message ' + (success ? 'sent' : 'failed'))
+      callback(error, success) if callback
     )
 
 
