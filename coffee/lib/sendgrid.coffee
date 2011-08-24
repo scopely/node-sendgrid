@@ -42,6 +42,12 @@ class SendGridClient
         getCategoriesStats : (params, callback) =>
           @callApi('stats.get', params, ['category'], ['days', 'start_date', 'end_date'], callback)
 
+      bounces:
+        get: (params, callback) =>
+          @callApi('bounces.get', params, [], ['date'], callback)
+        delete : (params, callback) =>
+          @callApi('bounces.delete', params , ['email'], [], callback)
+
 
   callApi : (method, params, requiredParamKeys, optionalParamKeys, callback) ->
 
