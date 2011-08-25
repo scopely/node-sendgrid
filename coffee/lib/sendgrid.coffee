@@ -65,7 +65,7 @@ class SendGridClient
     urlString = "#{SendGridClient.API_URL}#{method}.json?#{querystring.stringify(params)}"
 
     utils.requestByWget(urlString, null, (err, result) ->
-      callback(err, result) if callback
+      callback(err, JSON.parse(result)) if callback
     )
 
 
