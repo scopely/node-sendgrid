@@ -1,6 +1,6 @@
 {
     "name": "sendgrid-api"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "description": "Wrapper for the Sendgrid API"
   , "homepage": "http://github.com"
   , "keywords": ["sendgrid", "smtp", "email"]

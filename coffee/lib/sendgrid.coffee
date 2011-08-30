@@ -7,7 +7,7 @@ class SendGridClient
 
   @API_URL = "https://sendgrid.com/api/"
 
-  constructor : (@apiUser, @apiKey, @useWebApi = true) ->
+  constructor : (@apiUser, @apiKey, @useWget = false) ->
     if !apiUser || !apiKey
       throw new Error('Credentials missing')
 
@@ -64,9 +64,18 @@ class SendGridClient
 
     urlString = "#{SendGridClient.API_URL}#{method}.json?#{querystring.stringify(params)}"
 
-    utils.requestByWget(urlString, null, (err, result) ->
-      callback(err, JSON.parse(result)) if callback
-    )
+    if @useWget
+      utils.requestByWget(urlString, null, (err, result) ->
+        callback(err, JSON.parse(result)) if callback
+      )
+    else if method == 'mail.send'
+      utils.getHTTPSPostResponse(urlString, null, (err, result) ->
+        callback(err, JSON.parse(result)) if callback
+      )
+    else
+      utils.getHTTPSGetResponse(urlString, null, (err, result) ->
+        callback(err, JSON.parse(result)) if callback
+      )
 
 
 exports.SendGridClient = SendGridClient
